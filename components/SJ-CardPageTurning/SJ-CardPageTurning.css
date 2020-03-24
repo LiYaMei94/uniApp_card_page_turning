@@ -15,28 +15,28 @@
     top: 50%;
     left: 50%;
     margin-top: -500upx;
-    margin-left: -300upx; }
+    margin-left: -300upx;
+    overflow: hidden; }
     .card_wrap .card_item .card_item_image {
       width: 100%;
-      height: 100%;
-      border-radius: 10upx; }
+      height: 100%; }
     .card_wrap .card_item .card_item_type {
       width: 100upx;
       height: 100upx;
       border-radius: 50%;
       background-color: #d81e06;
       position: absolute;
-      top: 20upx; }
+      top: 25upx; }
       .card_wrap .card_item .card_item_type image {
-        width: 22upx;
-        height: 22upx;
+        width: 50upx;
+        height: 50upx;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%); }
     .card_wrap .card_item .card_item_type_like {
-      left: 20upx; }
+      left: 25upx; }
     .card_wrap .card_item .card_item_type_dislike {
-      right: 20upx; }
+      right: 25upx; }
 
 /*# sourceMappingURL=SJ-CardPageTurning.css.map */

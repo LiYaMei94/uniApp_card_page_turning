@@ -1,3 +1,4 @@
+import pc from './utils/pc.js'
 import Vue from 'vue'
 import App from './App'
 

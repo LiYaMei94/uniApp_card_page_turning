@@ -1,6 +1,11 @@
 $card_width: 600upx; //卡片的宽度
 $card_height: 1000upx; //卡片的高度
-$card_isLike_size:100upx;
+$card_borderRadius_size:10upx;//卡片的圆角大小
+
+$card_isLikeBg_size:100upx;//喜欢和不喜欢的图标背景大小
+$card_isLikeBg_bgColor:#d81e06;//喜欢和不喜欢的图标背景颜色
+$card_isLikeBg_spacing:25upx;//喜欢和不喜欢的图标距上边距和距左、距右边距的距离
+$card_isLikeImg_size:50upx;//喜欢和不喜欢的图标大小
 .card_wrap {
 		width: $card_width;
 		height: $card_height;
@@ -11,7 +16,7 @@ $card_isLike_size:100upx;
 		.card_item {
 			width: 100%;
 			height: 100%;
-			border-radius: 10upx;
+			border-radius: $card_borderRadius_size;
 			background: #ffffff;
 			text-align: center;
 			position: absolute;
@@ -19,21 +24,21 @@ $card_isLike_size:100upx;
 			left: 50%;
 			margin-top: -($card_height/2);
 			margin-left: - ($card_width/2);
+			overflow: hidden;
 			.card_item_image {
 				width: 100%;
 				height: 100%;
-				border-radius: 10upx;
 			}
 			.card_item_type {
-				width: $card_isLike_size;
-				height: $card_isLike_size;
+				width: $card_isLikeBg_size;
+				height: $card_isLikeBg_size;
 				border-radius: 50%;
-				background-color: #d81e06;
+				background-color: $card_isLikeBg_bgColor;
 				position: absolute;
-				top: 20upx;
+				top: $card_isLikeBg_spacing;
 				image {
-					width: 22upx;
-					height: 22upx;
+					width: $card_isLikeImg_size;
+					height: $card_isLikeImg_size;
 					position: absolute;
 					top: 50%;
 					left: 50%;
@@ -41,11 +46,11 @@ $card_isLike_size:100upx;
 				}
 			}
 			.card_item_type_like {
-				left: 20upx;
+				left: $card_isLikeBg_spacing;
 			}
 			
 			.card_item_type_dislike {
-				right: 20upx;
+				right: $card_isLikeBg_spacing;
 			}
 		}
 	}

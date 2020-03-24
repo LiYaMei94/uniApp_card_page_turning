@@ -14,11 +14,11 @@
 			<image class="card_item_image" :src="item.img" mode="aspectFill"></image>
 			<!-- 喜欢按钮 -->
 			<view class="card_item_type card_item_type_like" :style="{ display: item.like_state == -1 ? 'block' : 'none' }">
-				<image src="../../static/SJ-CardPageTurning/like1.png" mode="aspectFill"></image>
+				<image src="../../static/SJ-CardPageTurning/like1.png" mode=""></image>
 			</view>
 			<!-- 不喜欢按钮 -->
 			<view class="card_item_type card_item_type_dislike" :style="{ display: item.like_state == 1 ? 'block' : 'none' }">
-				<image src="../../static/SJ-CardPageTurning/dislike1.png" mode="aspectFill"></image>
+				<image src="../../static/SJ-CardPageTurning/dislike1.png" mode=""></image>
 			</view>
 		</view>
 	</view>
@@ -26,7 +26,36 @@
 
 <script>
 export default {
-	components: {},
+	props:{
+		card_data:{
+			type: Array,
+			default: function() {
+				return [
+					{
+						img: '../../static/SJ-CardPageTurning/card_img/card1.jpg',
+						anim: null,
+						like_state: 0
+					},
+					{
+						img: '../../static/SJ-CardPageTurning/card_img/card2.jpg',
+						anim: null,
+						like_state: 0
+					},
+					{
+						img: '../../static/SJ-CardPageTurning/card_img/card4.jpg',
+						anim: null,
+						like_state: 0
+					},
+					{
+						img: '../../static/SJ-CardPageTurning/card_img/card5.jpg',
+						anim: null,
+						like_state: 0
+					}
+				]
+			}
+		},
+		
+	},
 	data() {
 		return {
 			startX: 0, //滑动开始x轴位置
@@ -36,33 +65,6 @@ export default {
 			like_state: 0, //-1：左滑，0：没滑动，1：右滑
 			currentIndex: -1, //当前滑动的卡片index
 			skewDeg: 0, //当前滑动卡片的倾斜度
-			card_data: [
-				{
-					img: '../../static/SJ-CardPageTurning/card_img/card1.jpg',
-					anim: null,
-					like_state: 0
-				},
-				{
-					img: '../../static/SJ-CardPageTurning/card_img/card2.jpg',
-					anim: null,
-					like_state: 0
-				},
-				{
-					img: '../../static/SJ-CardPageTurning/card_img/card3.jpg',
-					anim: null,
-					like_state: 0
-				},
-				{
-					img: '../../static/SJ-CardPageTurning/card_img/card4.jpg',
-					anim: null,
-					like_state: 0
-				},
-				{
-					img: '../../static/SJ-CardPageTurning/card_img/card5.jpg',
-					anim: null,
-					like_state: 0
-				}
-			]
 		};
 	},
 	onLoad() {},
@@ -76,7 +78,7 @@ export default {
 			this.startY = event.touches[0].pageY;
 		},
 		/**
-		 * 触摸开始滑动
+		 * 开始滑动
 		 * */
 		touchMove(event) {
 			var currentX = event.touches[0].pageX;
@@ -86,7 +88,7 @@ export default {
 			var text = '';
 			var currentIndex = event.currentTarget.dataset.id;
 			var state = 0; //-1：左滑，0：没滑动，1：右滑
-			// //左右方向滑动
+			//左右方向滑动
 			if (Math.abs(moveX) > Math.abs(moveY)) {
 				if (moveX < -10) {
 					text = '左滑';
@@ -96,8 +98,7 @@ export default {
 					state = 1;
 				}
 				this.skew(currentIndex, moveX, moveY);
-			} else {
-				//上下方向滑动
+			} else {//上下方向滑动
 				if (moveY < 0) text = '上滑';
 				else if (moveY > 0) text = '下滑';
 			}
@@ -166,6 +167,6 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-@import './SJ-CardPageTurning.scss';
+<style lang="css" scoped>
+@import './SJ-CardPageTurning.css';
 </style>
