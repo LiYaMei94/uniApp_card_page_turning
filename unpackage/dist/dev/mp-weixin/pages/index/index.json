@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "card-page-turning": "/components/SJ-CardPageTurning/SJ-CardPageTurning"
+  }
+}

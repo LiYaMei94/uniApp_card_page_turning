@@ -25,12 +25,19 @@
 </template>
 
 <script>
+
 export default {
-	props:{
-		card_data:{
-			type: Array,
-			default: function() {
-				return [
+	
+	data() {
+		return {
+			startX: 0, //滑动开始x轴位置
+			startY: 0, //滑动开始y轴位置
+			moveX: 0, //滑动的x轴距离
+			moveY: 0, //滑动的y轴距离
+			like_state: 0, //-1：左滑，0：没滑动，1：右滑
+			currentIndex: -1, //当前滑动的卡片index
+			skewDeg: 0, //当前滑动卡片的倾斜度
+			card_data:[
 					{
 						img: '../../static/SJ-CardPageTurning/card_img/card1.jpg',
 						anim: null,
@@ -52,19 +59,6 @@ export default {
 						like_state: 0
 					}
 				]
-			}
-		},
-		
-	},
-	data() {
-		return {
-			startX: 0, //滑动开始x轴位置
-			startY: 0, //滑动开始y轴位置
-			moveX: 0, //滑动的x轴距离
-			moveY: 0, //滑动的y轴距离
-			like_state: 0, //-1：左滑，0：没滑动，1：右滑
-			currentIndex: -1, //当前滑动的卡片index
-			skewDeg: 0, //当前滑动卡片的倾斜度
 		};
 	},
 	onLoad() {},
@@ -76,6 +70,7 @@ export default {
 		touchStart(event) {
 			this.startX = event.touches[0].pageX;
 			this.startY = event.touches[0].pageY;
+			
 		},
 		/**
 		 * 开始滑动
@@ -125,6 +120,7 @@ export default {
 				this.card_data[this.currentIndex]['anim'] = anim.export();
 				this.card_data[this.currentIndex]['like_state'] = 0;
 			}
+			console.log(this.card_data)
 		},
 		/**
 		 * 触摸卡片倾斜
@@ -162,6 +158,7 @@ export default {
 				.opacity(0)
 				.step(1000);
 			this.card_data[this.currentIndex]['anim'] = anim.export();
+			console.log(this.card_data)
 		}
 	}
 };

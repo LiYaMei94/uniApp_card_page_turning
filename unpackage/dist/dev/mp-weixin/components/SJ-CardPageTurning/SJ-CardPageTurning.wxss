@@ -1,0 +1,53 @@
+.card_wrap.data-v-c1fd910c {
+  width: 600rpx;
+  height: 1000rpx;
+  position: relative;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  overflow: hidden;
+}
+.card_wrap .card_item.data-v-c1fd910c {
+    width: 100%;
+    height: 100%;
+    border-radius: 10rpx;
+    background: #ffffff;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -500rpx;
+    margin-left: -300rpx;
+    overflow: hidden;
+}
+.card_wrap .card_item .card_item_image.data-v-c1fd910c {
+      width: 100%;
+      height: 100%;
+}
+.card_wrap .card_item .card_item_type.data-v-c1fd910c {
+      width: 100rpx;
+      height: 100rpx;
+      border-radius: 50%;
+      background-color: #d81e06;
+      position: absolute;
+      top: 25rpx;
+}
+.card_wrap .card_item .card_item_type image.data-v-c1fd910c {
+        width: 50rpx;
+        height: 50rpx;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+}
+.card_wrap .card_item .card_item_type_like.data-v-c1fd910c {
+      left: 25rpx;
+}
+.card_wrap .card_item .card_item_type_dislike.data-v-c1fd910c {
+      right: 25rpx;
+}
+
